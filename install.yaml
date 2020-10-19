@@ -1,0 +1,19 @@
+---
+- name: Installing Linux sensors
+  hosts: sensors
+  tasks:
+  - name: make temp folder
+    file:
+      path: /tmp/carbonblack
+      state: directory
+  - name: Copy agent over
+    unarchive: 
+      src: files/InstallUninstall policy-redhat
+      dest: /tmp/carbonblack
+      creates: /tmp/carbonblack/InstallUninstall policy-redhat
+  - name: Run the install
+    become: true
+    shell: sh ./b9install.sh -n
+    args:
+      chdir: "/tmp/carbonblack/InstallUninstall policy-redhat"
+      creates: /srv/bit9
