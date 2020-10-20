@@ -8,9 +8,9 @@
       state: directory
   - name: Copy agent over
     unarchive: 
-      src: files/InstallUninstall policy-redhat
+      src: files/installuninstall policy-redhat.tgz
       dest: /tmp/carbonblack
-      creates: /tmp/carbonblack/InstallUninstall policy-redhat
+      creates: /tmp/carbonblack/installuninstall policy-redhat
   - name: Run the install
     become: true
     shell: sh ./b9install.sh -n
