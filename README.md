@@ -2,10 +2,10 @@
 Ansible playbook to deploy app control agents to linux machines
 
 ## Requirements:
-Ansible
-sudo password for account used to execute ansible tasks
-App control server
-Linux host package
+- Ansible
+- Sudo password for account used to execute ansible tasks
+- App control server
+- Linux host package
 
 ## Breakdown of tasks
 The steps for the playbook are: Create a temp folder, copy the agent over, run the install script
